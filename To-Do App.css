@@ -1,3 +1,111 @@
 body {
-    background-color: blanchedalmond;
+    background-image: url(./WoodBackground.png);
+    border: 10px;
+    margin: 2px;
+    
+    
+    text-align: center;
 }
+.container {
+    
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+
+}
+    
+
+.header {
+    background-image: url(./HeadingBackground\ top.jpg);
+    color: rgba(237, 129, 46, 0.906);
+    height: 215px;
+    border: 10px solid rgba(237, 129, 46, 0.906);
+    border-radius: 10%;
+}
+     #heading {
+        text-align: left;
+        margin: 10px;
+    
+    }
+
+    #date {
+       
+    }
+
+
+
+
+.content {
+ padding: 0px;
+ min-height: 430px;
+}
+    .item {
+     background-color: rgb(240, 202, 119);
+     border: 2px solid black;
+     border-radius: 10%;
+     margin: 5px;
+     padding: 0px;
+    }
+
+    li {
+        background-color: rgb(240, 202, 119);
+     border: 2px solid black;
+     border-radius: 10%;
+     margin: 5px;
+     padding: 0px;
+    }
+
+
+
+
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 580px;
+    color: rgb(240, 202, 119);
+    text-align: center;
+    background-color: rgb(240, 202, 119);
+    border: 5px solid black;
+    border-radius: 10%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+     #viewButtons {
+        padding: 10px;
+        margin: 0px;
+     }
+          .viewButton {
+         text-align: center;
+         width: 20%;
+         background-color: rgb(90, 158, 16);
+         border-radius: 10%;
+         padding: 0px;
+            
+         }
+
+    #dateSelect {
+ 
+    }
+
+     .myFoot {
+      text-align: center;
+      padding: 10px;
+      margin: 0px;
+
+
+      
+    }
+    
+    #addButton {
+        background-color: rgb(88, 159, 27);
+        text-align: center;
+        
+    }
+
+    #inputField {
+        
+        text-align: center;
+
+    }

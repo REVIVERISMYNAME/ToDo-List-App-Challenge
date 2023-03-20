@@ -10,6 +10,67 @@
     
 </head>
 <body>
+    <div class="container">
+
+
+        <div class="header">
+
+            <div id="heading">
+                <h1>To-Do List :</h1>
+
+                <div id="date">Date</div>
+            </div>
+            
+        </div>    
+
+
+
+            <div class="content">
+                <ul id="list">
+                    <li class="item">
+                        
+                         Add To-Do Tasks Below ...
+                       
+                    </li>
+
+                    <!--Tasks to be added here ... -->
+            
+
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div id="footer">
+                <div id="viewButtons">
+                     <button type="button/text" class="viewButton" id="view-All-Button" > All </button>
+                     <button type="button/text" class="viewButton" id="view-ToDo-Button" > To-Do </button>
+                     <button type="button/text" class="viewButton" id="view-Done-button" > Done </button>
+                </div>
+
+            <div id="dateSelect"> 
+
+                <p>Order list</p>      
+                
+                <select type="text" name="orderListBy" id="orderListBy">
+                     <option value="dateCreated">by date created</option>
+                     <option value="dateAlphabetically">Alphabetically</option>
+                     <option value="dateDue">by due date</option>
+                </select>
+            </div>
+
+            <div class="myFoot">
+                 <button id="addButton"> + </button>
+                 <input type="button/text" class="inputField" id="inputField" placeholder=" Add item to list ">
+
+
+
+            </div>
+            
+        </div>
+
+    </div>
 <script src="./To-Do App.js"></script>
 </body>
 </html>
