@@ -20,6 +20,13 @@
 
                 <div id="date">Date</div>
             </div>
+            <div class="viewButtons">
+                <button type="button/text" class="viewButton" id="view-All-Button" > All </button>
+                <button type="button/text" class="viewButton" id="view-ToDo-Button" > To-Do </button>
+                <button type="button/text" class="viewButton" id="view-Done-Button" > Done </button>
+                
+           </div>
+
             
         </div>    
 
@@ -28,10 +35,12 @@
             <div class="content">
                 <ul id="list">
                     <li class="item">
-                        
-                         Add To-Do Tasks Below ...
-                       
+                        <i class="fa fa-circle-thin" job="complete"></i>
+                        To-Do Tasks Below ...
+                        <i class="fa fa-trash-o" area-hidden="true" job="delete"></i> 
+   
                     </li>
+                    
 
                     <!--Tasks to be added here ... -->
             
@@ -42,22 +51,15 @@
 
 
 
-        <div id="footer">
-                <div id="viewButtons">
-                     <button type="button/text" class="viewButton" id="view-All-Button" > All </button>
-                     <button type="button/text" class="viewButton" id="view-ToDo-Button" > To-Do </button>
-                     <button type="button/text" class="viewButton" id="view-Done-button" > Done </button>
-                </div>
+        <div class="footer">
 
-            <div id="dateSelect"> 
-
-                <p>Order list</p>      
-                
-                <select type="text" name="orderListBy" id="orderListBy">
-                     <option value="dateCreated">by date created</option>
-                     <option value="dateAlphabetically">Alphabetically</option>
-                     <option value="dateDue">by due date</option>
-                </select>
+            <div class="dateSelect"> 
+                <p><select type="text" name="orderListBy" id="orderListBy">
+                    <option value="dateCreated">Order List by date created</option>
+                    <option value="dateAlphabetically">Order List Alphabetically</option>
+                    <option value="dateDue">Order List by due date</option>
+               </select>
+               </p>
             </div>
 
             <div class="myFoot">

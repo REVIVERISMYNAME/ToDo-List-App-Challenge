@@ -23,6 +23,7 @@ body {
     border-radius: 10%;
 }
      #heading {
+
         text-align: left;
         margin: 10px;
     
@@ -59,20 +60,23 @@ body {
 
 
 
-#footer {
+.footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     bottom: 0px;
     width: 580px;
     color: rgb(240, 202, 119);
-    text-align: center;
+    
     background-color: rgb(240, 202, 119);
     border: 5px solid black;
     border-radius: 10%;
     margin: 0px;
-    padding: 0px;
+    padding: 5px;
     
 }
-     #viewButtons {
+     .viewButtons {
         padding: 10px;
         margin: 0px;
      }
@@ -86,7 +90,16 @@ body {
          }
 
     #dateSelect {
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        color: black;
+
+        
  
+    }
+
+    #orderListBy {
     }
 
      .myFoot {
