@@ -16,6 +16,7 @@ body {
     
 
 .header {
+    margin: 3px;
     background-image: url(./HeadingBackground\ top.jpg);
     color: rgba(237, 129, 46, 0.906);
     height: 215px;
@@ -37,23 +38,53 @@ body {
 
 
 .content {
+    text-align: center;
  padding: 0px;
  min-height: 430px;
+ 
 }
+ 
+    #examplePara {
+       margin: 0px;
+       text-align: center;
+       
+    }
+    #trashButton {
+        background-color: red; 
+        text-align: end;
+
+    }
     .item {
-     background-color: rgb(240, 202, 119);
-     border: 2px solid black;
-     border-radius: 10%;
-     margin: 5px;
-     padding: 0px;
+        text-align: center;
+
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(240, 202, 119);
+        border: 2px solid black;
+        height: 25px;
+
+        margin: 5px;
+        padding: 5px;
     }
 
-    li {
-        background-color: rgb(240, 202, 119);
-     border: 2px solid black;
-     border-radius: 10%;
-     margin: 5px;
-     padding: 0px;
+           li {
+            text-align: center;
+
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(240, 202, 119);
+            border: 2px solid black;
+    
+            margin: 5px;
+            padding: 5px;
+        }
+    
+    #deleteButton {
+        background-color: red;
+        position: fixed;
+        right: 30px;
+        height: 30px;
+        
     }
 
 
@@ -66,7 +97,7 @@ body {
     flex-direction: column;
     position: fixed;
     bottom: 0px;
-    width: 580px;
+    width: 570px;
     color: rgb(240, 202, 119);
     
     background-color: rgb(240, 202, 119);

@@ -48,32 +48,16 @@ var viewDoneButton = document.getElementById("view-Done-Button");
         console.log(" -- 'Done' Button Pressed -- ");
 
     }
-    
-
-//Created Array displayed in list// 
-var taskList = [
-    Task1 = "T1",
-    Task2 = "T2"
-
-];
-
-console.log(taskList);
-
-    var li = document.createElement("li"); 
-        li.textContent = taskList ;
-
-    
-     var list  = document.getElementById("list"); 
-         list.appendChild(li);
-         console.log(li);
 
 
-        
+    const list = document.getElementById("list");
+    const input = document.getElementById("inputField");
 
+    const CHECK = "fa-check-circle";
+    const UNCHECK = "fa-circle-thin";
+    const LINE_THROUGH = "lineThrough";
 
-
-
-
+   
 
 // Function for button to add a task //
 var addButton = document.getElementById("addButton");
@@ -84,14 +68,26 @@ var addButton = document.getElementById("addButton");
         
         var inputField = document.getElementById("inputField").value;
        
+
+        
         var listOfTasks = [];
             listOfTasks.push(inputField)
             
-        var li = document.createElement("li");
-            li.textContent = listOfTasks;
+            
+                               var item = `
+                               <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
+                               <p class="text" id="examplePara">${listOfTasks}</p>
+                               <i class="fa fa-trash-o de" job="delete" id="remove"></i>
+                                            ` ; 
+            console.log(item);
+
+            var li = document.createElement("li");
+                li.innerHTML = item;
+                console.log(li);
+
 
             var list  = document.getElementById("list"); 
-            list.appendChild(li); 
+            list.appendChild(li) ;
             console.log(listOfTasks);
 
 
@@ -99,7 +95,32 @@ var addButton = document.getElementById("addButton");
             taskList.push(inputField);
             console.log(taskList);
 
+            var removeButton = document.getElementById("remove");
+            removeButton.addEventListener("click", removeTask);
+            function removeTask() {
+            console.log(" -- Remove Button Pressed --")
+            }
+
+
     }
+
+    
+
+    //Created Array displayed in list// 
+const taskList = [
+    "T1",
+    "T2",
+    "T3",
+    "T4"
+
+];
+
+var removeButton = document.getElementById("remove");
+    removeButton.addEventListener("click", removeTask);
+    function removeTask() {
+    console.log(" -- Remove Button Pressed --")
+}
+
 
 
 
