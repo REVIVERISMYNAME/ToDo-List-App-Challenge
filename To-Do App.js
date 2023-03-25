@@ -56,73 +56,63 @@ var viewDoneButton = document.getElementById("view-Done-Button");
     const CHECK = "fa-check-circle";
     const UNCHECK = "fa-circle-thin";
     const LINE_THROUGH = "lineThrough";
+    const removeItem = (`<i class="fa fa-trash-o de" job="delete" id="remove"></i>`);
 
-   
+        //Created Array displayed in list// 
+        var taskList = [
+        "To-Do Tasks Below ...",
+        ];
+    // Function to display Array in the "list" element //
+    function generateListItems(arg) {
+        let items = "";
+        for(let i = 0; i < arg.length; i++) {
+            items += `<li class="item">
+            <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
+            <p class="text" id="examplePara">${arg[i]}</p>
+            <i class="fa fa-trash-o de" job="delete" id="remove"></i>
+            </li>` ;
+        }
+        return items;
+    }
+    document.getElementById("list").innerHTML = 
+    `<ul>
+        ${generateListItems(taskList)}
+    </ul>`;
 
 // Function for button to add a task //
 var addButton = document.getElementById("addButton");
     addButton.addEventListener("click", addTask);
-    function addTask() {
+     function addTask() {
         console.log(" -- addButton Pressed -- ");
-    
         
-        var inputField = document.getElementById("inputField").value;
+        var inputField = document.getElementById("inputField");
        
-
-        
-        var listOfTasks = [];
-            listOfTasks.push(inputField)
+        taskList.push(inputField.value);
+        console.log(taskList);
             
-            
-                               var item = `
-                               <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
-                               <p class="text" id="examplePara">${listOfTasks}</p>
-                               <i class="fa fa-trash-o de" job="delete" id="remove"></i>
-                                            ` ; 
-            console.log(item);
-
-            var li = document.createElement("li");
-                li.innerHTML = item;
-                console.log(li);
-
-
-            var list  = document.getElementById("list"); 
-            list.appendChild(li) ;
-            console.log(listOfTasks);
-
-
-            // Add Task to Arr from InputFiel //
-            taskList.push(inputField);
-            console.log(taskList);
-
-            var removeButton = document.getElementById("remove");
-            removeButton.addEventListener("click", removeTask);
-            function removeTask() {
-            console.log(" -- Remove Button Pressed --")
-            }
-
+             document.getElementById("list").innerHTML = 
+              `<ol>
+                ${generateListItems(taskList)}
+              </ol>`;
 
     }
+    console.log(taskList);
 
     
 
-    //Created Array displayed in list// 
-const taskList = [
-    "T1",
-    "T2",
-    "T3",
-    "T4"
 
-];
 
-var removeButton = document.getElementById("remove");
-    removeButton.addEventListener("click", removeTask);
-    function removeTask() {
-    console.log(" -- Remove Button Pressed --")
-}
 
 
 
 
     // Function for button to remove Task from List //
+    var removeButton = document.getElementById("remove");
+    removeButton.addEventListener("click", removeTask);
+    function removeTask() {
+     console.log(" -- Remove Button Pressed --");
 
+     taskList.pop(inputField.value);
+
+
+    };
