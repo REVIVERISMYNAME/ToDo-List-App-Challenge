@@ -66,6 +66,7 @@ var viewDoneButton = document.getElementById("view-Done-Button");
     function generateListItems(arg) {
         let items = "";
         for(let i = 0; i < arg.length; i++) {
+            
             items += `<li class="item">
             <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
             <p class="text" id="examplePara">${arg[i]}</p>
@@ -78,6 +79,14 @@ var viewDoneButton = document.getElementById("view-Done-Button");
     `<ul>
         ${generateListItems(taskList)}
     </ul>`;
+    
+
+    var orderListButton = document.getElementById("orderListButton");
+    orderListButton.addEventListener("click", orderAlphabetically);
+     function orderAlphabetically() {
+        console.log(" -- orderListButton Pressed -- ");
+        taskList.sort();
+    };
 
 // Function for button to add a task //
 var addButton = document.getElementById("addButton");
@@ -114,5 +123,12 @@ var addButton = document.getElementById("addButton");
 
      taskList.pop(inputField.value);
 
+      document.getElementById("list").innerHTML = 
+              `<ol>
+                ${generateListItems(taskList)}
+              </ol>`;
+
 
     };
+
+    console.log(taskList);

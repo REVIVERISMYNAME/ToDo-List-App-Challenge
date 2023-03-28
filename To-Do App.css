@@ -56,7 +56,6 @@ body {
     #remove {
          position:absolute;
          right: 20px;
-
     }
 
     #list {
@@ -94,7 +93,7 @@ body {
     bottom: 0px;
     width: 570px;
     color: rgb(240, 202, 119);
-    position: sticky;
+    position: fixed;
     background-color: rgb(240, 202, 119);
     border: 5px solid black;
     border-radius: 10%;
