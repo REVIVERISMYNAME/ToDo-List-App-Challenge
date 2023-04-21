@@ -11,68 +11,57 @@
     
 </head>
 <body>
-    <div class="container">
 
-
-        <div class="header">
-
-            <div id="heading">
-                <h1>To-Do List :</h1>
-
-                <div id="date">Date</div>
-            </div>
-            <div class="viewButtons">
-                <button type="button/text" class="viewButton" id="view-All-Button" > All </button>
-                <button type="button/text" class="viewButton" id="view-ToDo-Button" > To-Do </button>
-                <button type="button/text" class="viewButton" id="view-Done-Button" > Done </button>
-                
-           </div>
-
+    <div id="main" class="header">
+    
+      <div id="heading"> 
+    
+         <h1>To-Do List :</h1>
+    
+         <div id="date">Date</div>
+    
+        
+        
+         <div class="viewButtons">
+            <button type="button/text" class="viewButton" id="view-All-Button" > Home </button>
+            <button type="button/text" class="viewButton" id="view-ToDo-Button" > To-Do </button>
+            <button type="button/text" class="viewButton" id="view-Done-Button" > Done </button>
             
-        </div>    
-
-
-
-            <div class="content">
-                <ul id="list">
-                    <li class="item">
-                        <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
-                        <p class="text" id="examplePara">To-Do Tasks Below ...</p>
-                        <i class="fa fa-trash-o de" job="delete" id="remove"></i>
-                    </li>
-
-                    
-                    
-
-                    <!--Tasks to be added here ... -->
-            
-
-                </ul>
-            </div>
-        </div>
-
-
-
-        <div class="footer">
-
-            <div class="dateSelect"> 
-                <p>
-                    <button type="button/text" class="orderListButton" id="orderListButton" > Order List Alphabetically </button>
-               </p>
-               
-            </div>
-
-            <div class="myFoot">
-                
-                 <button id="addButton"> + </button>
-                 <input type="button/text" class="inputField" id="inputField" placeholder=" Add item to list ">
-
-
-
-            </div>
-            
-        </div>
-
+         </div>
+    
+      </div> 
+    </div>
+    
+    <div class="content">
+      <ul id="myUL">
+          <li>To-Do Tasks Below ...</li>
+          
+    
+    
+          <!--Tasks to be added here ... -->
+    
+    
+      </ul>
+    </div>
+    
+    <div class="footer">
+    
+      <div class="dateSelect"> 
+    
+    
+          <p>
+              <button type="button/text" class="orderListButton" id="orderListButton" > Order List Alphabetically </button>
+         </p>
+         
+      </div>
+    
+      <div class="myFoot">
+    
+        <input type="text" id="myInput" placeholder=" Add item to list ">
+        <span onclick="addNewTask()" class="addBtn"> + </span>
+      
+      </div>
+      
     </div>
 <script src="./To-Do App.js"></script>
 </body>

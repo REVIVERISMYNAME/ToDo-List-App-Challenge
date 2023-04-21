@@ -6,18 +6,16 @@ const options = {weekday : "long", month:"short", day:"numeric"};
 const today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
-
-
 var contentTab = document.getElementsByClassName("content");
 var headerTab = document.getElementsByClassName("header");
 var footerTab = document.getElementsByClassName("footer");
 var viewButtonsTab = document.getElementsByClassName("viewButtons");
     
-//Button to view "All" //
+//Button to view "Home" //
       var viewAllButton = document.getElementById("view-All-Button");
       viewAllButton.addEventListener("click", viewAll);
      function viewAll() {
-        console.log(" -- Viw 'All' Button Pressed -- ");
+        console.log(" -- Viw 'Home' Button Pressed -- ");
         viewButtonsTab[0].style.display = "block";
         headerTab[0].style.display = "block";
         contentTab[0].style.display = "block";
@@ -49,86 +47,76 @@ var viewDoneButton = document.getElementById("view-Done-Button");
 
     }
 
-
-    const list = document.getElementById("list");
-    const input = document.getElementById("inputField");
-
-    const CHECK = "fa-check-circle";
-    const UNCHECK = "fa-circle-thin";
-    const LINE_THROUGH = "lineThrough";
-    const removeItem = (`<i class="fa fa-trash-o de" job="delete" id="remove"></i>`);
-
-        //Created Array displayed in list// 
-        var taskList = [
+//Created Array displayed in list// 
+var taskList = [
         "To-Do Tasks Below ...",
         ];
-    // Function to display Array in the "list" element //
-    function generateListItems(arg) {
-        let items = "";
-        for(let i = 0; i < arg.length; i++) {
-            
-            items += `<li class="item">
-            <i class="fa fa-circle-thin co" job="complete" id="0"></i> 
-            <p class="text" id="examplePara">${arg[i]}</p>
-            <i class="fa fa-trash-o de" job="delete" id="remove"></i>
-            </li>` ;
-        }
-        return items;
+   
+
+
+// Function for Task to list items
+  function addNewTask() {
+    console.log(' -- "ADD" Button Pressed --');
+    taskList.push(myInput.value);
+
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("Input Field Empty");
+  }
+  else {
+    document.getElementById("myUL").appendChild(li);
+  }
+
+
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  console.log(taskList);
+
+
+  // To hide the list item when "X" is clicked 
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
     }
-    document.getElementById("list").innerHTML = 
-    `<ul>
-        ${generateListItems(taskList)}
-    </ul>`;
-    
+  }
+}
 
-    var orderListButton = document.getElementById("orderListButton");
-    orderListButton.addEventListener("click", orderAlphabetically);
-     function orderAlphabetically() {
-        console.log(" -- orderListButton Pressed -- ");
-        taskList.sort();
-    };
+// Function for "Remove" button appended to list items
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
 
-// Function for button to add a task //
-var addButton = document.getElementById("addButton");
-    addButton.addEventListener("click", addTask);
-     function addTask() {
-        console.log(" -- addButton Pressed -- ");
-        
-        var inputField = document.getElementById("inputField");
-       
-        taskList.push(inputField.value);
-        console.log(taskList);
-            
-             document.getElementById("list").innerHTML = 
-              `<ol>
-                ${generateListItems(taskList)}
-              </ol>`;
+// Function for "X" button to hide relevant list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
-    }
-    console.log(taskList);
-
-    
-
-
-
-
-
-
-
-    // Function for button to remove Task from List //
-    var removeButton = document.getElementById("remove");
-    removeButton.addEventListener("click", removeTask);
-    function removeTask() {
-     console.log(" -- Remove Button Pressed --");
-
-     taskList.pop(inputField.value);
-
-      document.getElementById("list").innerHTML = 
-              `<ol>
-                ${generateListItems(taskList)}
-              </ol>`;
-
-
-    };
-
-    console.log(taskList);
+// Add a "checked" symbol when clicking relevant list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
